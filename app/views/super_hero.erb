@@ -1,11 +1,15 @@
 
-<h1><%=@team.name%></h1>
-<h2>Team Motto: <%=@team.motto%></h2>
-<% binding.pry %>
+<h1><%=@team["name"]%></h1>
+<h2>Team Motto: <%=@team["motto"]%></h2>
 
-<% @heros.each do |hero| %>
-<p>Hero Name: <%= hero.name %></p>
-<p>Hero Power: <%= hero.power %></p>
+<h2>Hero Name: <%=@team["member"][0]["name"]%></h2>
+<p>Hero Power: <%=@team["member"][0]["power"]%></p>
+<p>Hero Biography: <%=@team["member"][0]["biography"]%></p>
 
-<p>Hero Biography: <%= hero.biography %></p>
-<% end %>
+<h2>Hero Name: <%=@team["member"][1]["name"]%></h2>
+<p>Hero Power: <%=@team["member"][1]["power"]%></p>
+<p>Hero Biography: <%=@team["member"][1]["biography"]%></p>
+
+<h2>Hero Name: <%=@team["member"][2]["name"]%></h2>
+<p>Hero Power: <%=@team["member"][2]["power"]%></p>
+<p>Hero Biography: <%=@team["member"][2]["biography"]%></p>
