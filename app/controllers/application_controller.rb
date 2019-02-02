@@ -7,10 +7,16 @@ class App < Sinatra::Base
           erb :team
         end
 
-        post "/teams" do
-          @team = params["team"]
+        @heros = params[:team][:member].map do |hero_data|
+               hero = Member.new(hero_data)
+               hero.team = @team
+               hero.save
+               hero
+             end
 
-          erb :super_hero
-        end
+             erb :super_hero
+           end
+
+      
 
     end
